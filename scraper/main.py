@@ -38,13 +38,32 @@ def job():
                         sel = Selector(text=r.text)
 
                     notes = []
-                    for name in sel.css(table["lbase"]):
-                        lname = ' '.join(str(name.css(table["lname"]).get()).split())
-                        lurl = ' '.join(str(name.css(table["lurl"]).get()).split())
+                    if table["lbase"] != "***":
+                        for name in sel.css(table["lbase"]):
+                            lname = ' '.join(str(name.css(table["lname"]).get()).split())
+                            lurl = ' '.join(str(name.css(table["lurl"]).get()).split())
 
-                        if lname != "None" and lurl != "None":
-                            notes.append(Note(lname, lurl))
-                            print(lname, lurl)
+                            if lname != "None" and lurl != "None":
+                                notes.append(Note(lname, lurl))
+                                print(lname, lurl)
+
+                    else:
+                        for i, name in enumerate(sel.css(table["lname"])):
+                            lname = ' '.join(str(name.get()).split())
+                            notes.append(Note("",""))
+                            notes[i].name = lname
+
+                        for i, name in enumerate(sel.css(table["lurl"])):
+                            notes[i].url = ' '.join(str(name.get()).split())
+
+                        listN = []
+                        for note in notes:
+                            if note.url != "None" and note.name != "None":
+                                listN.append(note)
+
+                        notes = listN
+                        
+
 
                     # to minimize errors
                     if len(notes) > 0:
