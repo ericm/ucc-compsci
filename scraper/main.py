@@ -17,22 +17,49 @@ def job():
                              cursorclass=pymysql.cursors.DictCursor)
     try:
         with connection.cursor() as cursor:
-            sql = "SELECT `url`, `locate` FROM `courses`"
+            sql = "SELECT * FROM `courses`"
             cursor.execute(sql)
-            result = cursor.fetchone()
-            r = requests.get(result["url"])
-            sel = Selector(text=r.text)
+            result = cursor.fetchall()
             
-            notes = []
-            for name in sel.css('table[class="module"] tr'):
-                notes.append(Note(name.xpath('.//td[0]/text()').get(), name.xpath('.//td[1]/a/@href').get()))
-                print(' '.join(str(name.css('td:nth-of-type(1)::text').get()).split()), ' '.join(str(name.css('td:nth-of-type(2)').xpath('.//a/@href').get()).split()))
+            for res in result:
+                tableSql = "SELECT * FROM `tables` WHERE id='" + res["id"] + "'"
+                cursor.execute(tableSql)
+                tableRes = cursor.fetchall()
 
-#            for res in result["url"]:
-#                r = requests.get(link)
-#                sel = Selector(text=r.text)
+                r = requests.get(res["url"])
+                sel = Selector(text=r.text)
 
-#                print(sel.css('h1::text').get())
+                for table in tableRes:
+                    if table["url"] != "null":
+                        r = requests.get(table["url"])
+                        sel = Selector(text=r.text)
+                    else:
+                        r = requests.get(res["url"])
+                        sel = Selector(text=r.text)
+
+                    notes = []
+                    for name in sel.css(table["lbase"]):
+                        lname = ' '.join(str(name.css(table["lname"]).get()).split())
+                        lurl = ' '.join(str(name.css(table["lurl"]).get()).split())
+
+                        if lname != "None" and lurl != "None":
+                            notes.append(Note(lname, lurl))
+                            print(lname, lurl)
+
+                    # to minimize errors
+                    if len(notes) > 0:
+                        cursor.execute("DELETE FROM `notes` WHERE `id` = %s AND `table` = %s", (table["id"], table["name"]))
+                        connection.commit()
+
+                        # inserts
+                        for note in notes:
+                            cursor.execute("INSERT INTO `notes` VALUES (%s, %s, %s, %s);", (table["id"], table["name"], note.name, note.url))
+
+                        connection.commit()
+
+                    
+
+               
     finally:
         connection.close()
 
