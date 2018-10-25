@@ -76,7 +76,7 @@ th = threading.Thread(target=recache, args=(), kwargs={})
 th.start()
 
 @app.route('/')
-@cache.cached(30)
+# @cache.cached(30)
 def index():
     courses = queries()
 

@@ -3,7 +3,8 @@
 
   <head>
     <title>{{name}}</title>
-    <link href="static/styles.css"/>
+    <link href="static/styles.css" type="text/css" rel="stylesheet"/>
+    <script type="application/javascript" src="static/lists.js"></script>
   </head>
 
   <body>
@@ -13,13 +14,13 @@
     <main>
       {% for course in courses %}
       <section class="course">
-        <h2>{{course.name}} <i>({{course.id}})</i></h2>
+        <h2><a target="_blank" href="{{course.url}}">{{course.name}} <i>({{course.id}})</i></a></h2>
           {% for table in course.tables %}
-          <section class="table">
-            <h3>{{table.name}}</h3>
+          <section class="table undrop">
+            <h3>{{table.name}}<i onclick="drop(this);" class="fas fa-angle-down"></i></h3>
               <ul>
                 {% for note in table.notes %}
-                <li><a href="{{table.prefix}}{{note.url}}">{{note.name}}</a></li>
+                <li><a target="_blank" href="{{table.prefix}}{{note.url}}">{{note.name}}</a></li>
                 {% endfor %}
               </ul>
           </section>

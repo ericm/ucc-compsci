@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu|Barlow+Condensed:700');
+@import url('https://use.fontawesome.com/releases/v5.4.1/css/all.css'); 
+body {
+    font-family: 'Ubuntu', Arial;
+    font-size: 15px;
+    margin: 0;
+}
+header {
+    background: rgba(55, 7, 167, 0.925);
+    font-family: 'Barlow Condensed';
+    color: #fff;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-weight: bolder;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.568);
+    font-size: 1.1em;
+    padding-left: 1em;
+}
+main {
+    margin: 7em auto;
+    width: 60%;
+    font-size: 1.3em;
+    background: rgba(216, 180, 240, 0.226);
+    padding: .5em 2em;
+    color: #211374;
+    border-radius: 3em;
+}
+.course {
+    padding-bottom: 1em;
+}
+.course>h2 {
+    color: #3f3f3f;
+    padding-bottom: .5em;
+    border-bottom: solid #302d4434 .2em;
+}
+.table {
+    background: #b6b6b628;
+    padding: .1em 1em;
+    border-radius: .5em;
+    border-bottom: solid #302d4434 .1em;
+    margin-bottom: 2em;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.123);
+    transition: all 1s;
+}
+.table>h3 {
+    color: #494949;
+    padding-bottom: .7em;
+    border-bottom: solid #302d4434 .1em;
+}
+
+ul li a {
+    color: #3f3e3e;
+    padding: .3em 1em;
+    width : 60%;
+    transition: all .5s;
+}
+ul li a:visited {
+    color: #6d6d6d;
+    transition: all .5s;
+}
+ul li a:hover {
+    color: #fff;
+    background: #4534a7;
+    border-radius: 3em;
+}
+h2 a {
+    transition: all .5s;
+    color: #3f3f3f;
+    border-left: #7868d1 solid 0;
+}
+h2 a:hover {
+    border-left: #7868d1 solid .2em;
+    padding-left: .3em;
+}
+.fa-angle-down {
+    float: right;
+    font-size: 1.5em;
+    position: relative;
+    top: -.1em;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+ul {
+    transition: all 1s;
+    height: auto;
+}
+li {
+    list-style: none;
+    margin: 1em;
+}
+a {
+    text-decoration: none;
+}
+
+.undrop ul{
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.undrop .fa-angle-down {
+    transform: rotate(0deg);
+}
