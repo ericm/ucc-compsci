@@ -3,6 +3,8 @@ from env import env
 from parsel import Selector
 import requests
 import sys
+import time
+from datetime import datetime
 
 class Note:
     def __init__(self, name, url):
@@ -18,6 +20,11 @@ def job():
                              cursorclass=pymysql.cursors.DictCursor)
     try:
         with connection.cursor() as cursor:
+            CurrentTime = datetime.strftime(datetime.now(), "%Y-%m-%d %H:%M:%S")
+            cursor.execute("DELETE FROM `info`")
+            cursor.execute("INSERT INTO `info` VALUES (%s)", (CurrentTime))
+            connection.commit()
+
             sql = "SELECT * FROM `courses`"
             cursor.execute(sql)
             result = cursor.fetchall()

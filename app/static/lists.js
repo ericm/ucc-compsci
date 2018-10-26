@@ -1,4 +1,4 @@
-function drop(elem) {
+function drop(elem, cl) {
     var el = elem.parentElement.parentElement;
-    el.classList.toggle("undrop");
+    el.classList.toggle(cl);
 }
