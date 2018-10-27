@@ -16,11 +16,11 @@ header {
     font-weight: bolder;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.568);
     font-size: 1.1em;
-    padding-left: 1em;
+    padding: .6em 15%;
 }
 main {
     margin: 7em auto;
-    width: 60%;
+    width: 70%;
     font-size: 1.3em;
     background: rgba(216, 180, 240, 0.226);
     padding: .5em 2em;
@@ -79,6 +79,7 @@ h2 a:hover {
     padding-left: .3em;
 }
 .fa-angle-down {
+    transition: all .15s;
     float: right;
     font-size: 1.5em;
     position: relative;
@@ -87,8 +88,13 @@ h2 a:hover {
     transform: rotate(180deg);
     margin-right: 1em;
 }
-header>span {
-    color: rgb(236, 236, 236);
+span, h1 {
+    color: rgb(224, 224, 224);
+    display: inline;
+    vertical-align: middle;
+}
+h1 {
+    padding-right: .3em;
 }
 ul {
     transition: all 1s;
@@ -113,4 +119,13 @@ a {
 
 .undropC>section {
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        width: 80%;
+    }
+    header {
+        padding: .1em 10%;
+    }
 }

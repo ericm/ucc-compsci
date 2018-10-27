@@ -9,7 +9,7 @@ app = Flask(__name__)
 cache = Cache(app,config={'CACHE_TYPE': 'simple'})
 
 def last():
-    out = "aaa"
+    out = ""
     connection = pymysql.connect(host='mysql.netsoc.co',
                              user=env.username,
                              password=env.password,
@@ -24,8 +24,6 @@ def last():
             lastUpdate = datetime.strptime(r["current"], "%Y-%m-%d %H:%M:%S")
             c = datetime.now()
             diff = c - lastUpdate
-
-            out = ""
 
             if diff.seconds//3600 > 0:
                 out = f'{diff.seconds//3600} hour'

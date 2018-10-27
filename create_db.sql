@@ -1,9 +1,22 @@
+create table additions
+(
+  id      varchar(100)  null,
+  `table` varchar(1000) null,
+  name    varchar(1000) null,
+  url     varchar(1000) null
+);
+
 create table courses
 (
   id   varchar(10)    not null
     primary key,
   url  varchar(10000) null,
   name varchar(100)   null
+);
+
+create table info
+(
+  current varchar(1000) null
 );
 
 create table notes
