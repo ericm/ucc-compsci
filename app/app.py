@@ -25,15 +25,17 @@ def last():
             c = datetime.now()
             diff = c - lastUpdate
 
-            if diff.seconds//3600 > 0:
-                out = f'{diff.seconds//3600} hour'
-                out += "s" if diff.seconds//3600 != 1 else ""
-            elif diff.seconds//60 > 0:
-                out = f'{diff.seconds//60} minute'
-                out += "s" if diff.seconds//60 != 1 else ""
+            diff = int(diff.total_seconds())
+
+            if diff//3600 > 0:
+                out = f'{diff//3600} hour'
+                out += "s" if diff//3600 != 1 else ""
+            elif diff//60 > 0:
+                out = f'{diff//60} minute'
+                out += "s" if diff//60 != 1 else ""
             else:
-                out = f'{diff.seconds} second'
-                out += "s" if diff.seconds !=1 else ""
+                out = f'{diff} second'
+                out += "s" if diff !=1 else ""
 
     finally:
         connection.close()
@@ -87,8 +89,14 @@ def queries():
 
                     notes = cursor.fetchall()
 
+                    addits = cursor.fetchall()
+                    for adds in addits:
+                        courses[i].tables[it].notes.append(Note(adds["name"], adds["url"]))
+
                     for n in notes:
                         courses[i].tables[it].notes.append(Note(n["name"], n["url"]))
+
+                    cursor.execute("SELECT * FROM `additions` WHERE `id` = %s AND `table`= %s", (t["id"], t["name"]))
 
             return courses
 
