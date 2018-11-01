@@ -61,7 +61,7 @@ class Course:
         self.name = name
         self.tables = tables
 
-@cache.cached(timeout=300, key_prefix="queries")
+@cache.cached(timeout=100, key_prefix="queries")
 def queries():
     connection = pymysql.connect(host='mysql.netsoc.co',
                              user=env.username,
@@ -105,12 +105,12 @@ def queries():
     finally:
         connection.close()
 
-queries()
+print(queries())
 # print(last())
 def recache():
     while 1:
         queries()
-        time.sleep(300)
+        time.sleep(80)
     
 
 th = threading.Thread(target=recache, args=(), kwargs={})
