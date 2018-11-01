@@ -105,8 +105,8 @@ def queries():
     finally:
         connection.close()
 
-print(queries())
-# print(last())
+queries()
+
 def recache():
     while 1:
         queries()

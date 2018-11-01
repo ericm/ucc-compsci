@@ -69,12 +69,12 @@ ul li a:hover {
     background: #4534a7;
     border-radius: 3em;
 }
-h2 a {
+h2 a, h3 a {
     transition: all .5s;
     color: #3f3f3f;
     border-left: #7868d1 solid 0;
 }
-h2 a:hover {
+h2 a:hover, h3 a:hover {
     border-left: #7868d1 solid .2em;
     padding-left: .3em;
 }

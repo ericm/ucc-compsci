@@ -53,7 +53,7 @@ def job():
                                     notes.append(Note(lname, lurl))
                                     print(lname, lurl)
 
-                        else:
+                        elif table["lbase"] != "-":
                             for i, name in enumerate(sel.css(table["lname"])):
                                 lname = ' '.join(str(name.get()).split())
                                 notes.append(Note("",""))
