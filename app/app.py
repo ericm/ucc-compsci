@@ -89,6 +89,8 @@ def queries():
 
                     notes = cursor.fetchall()
 
+                    cursor.execute("SELECT * FROM `additions` WHERE `id` = %s AND `table`= %s", (t["id"], t["name"]))
+
                     addits = cursor.fetchall()
                     for adds in addits:
                         courses[i].tables[it].notes.append(Note(adds["name"], adds["url"]))
@@ -96,8 +98,7 @@ def queries():
                     for n in notes:
                         courses[i].tables[it].notes.append(Note(n["name"], n["url"]))
 
-                    cursor.execute("SELECT * FROM `additions` WHERE `id` = %s AND `table`= %s", (t["id"], t["name"]))
-
+                    
             return courses
 
 
@@ -116,7 +117,7 @@ th = threading.Thread(target=recache, args=(), kwargs={})
 th.start()
 
 @app.route('/')
-# @cache.cached(30)
+@cache.cached(30)
 def index():
     courses = queries()
     difference = last()
