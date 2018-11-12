@@ -15,21 +15,28 @@
       <span>Last Refreshed: {{dif}} ago</span>
     </header>
     <main>
-      {% for course in courses %}
-      <section class="course undropC">
-        <h2><a target="_blank" href="{{course.url}}">{{course.name}} <i>({{course.id}})</i></a><i onclick="drop(this, 'undropC');" class="fas fa-angle-down"></i></h2>
-          {% for table in course.tables %}
-          <section class="table undrop">
-            <h3><a href="{{table.url}}" target="_blank">{{table.name}}</a><i onclick="drop(this, 'undrop');" class="fas fa-angle-down"></i></h3>
-              <ul>
-                {% for note in table.notes %}
-                <li><a target="_blank" href="{{table.prefix}}{{note.url}}">{{note.name}}</a></li>
-                {% endfor %}
-              </ul>
+      {% for year in years %}
+        <section class="year undropC">
+          <h2>Year {{year.year}}<i onclick="drop(this, 'undropC');" class="fas fa-angle-down"></i></h2>
+          {% for course in year.courses %}
+          <section class="course undropC">
+            <h2><a target="_blank" href="{{course.url}}">{{course.name}} <i>({{course.id}})</i></a><i onclick="drop(this, 'undropC');" class="fas fa-angle-down"></i></h2>
+              {% for table in course.tables %}
+              <section class="table undrop">
+                <h3><a href="{{table.url}}" target="_blank">{{table.name}}</a><i onclick="drop(this, 'undrop');" class="fas fa-angle-down"></i></h3>
+                  <ul>
+                    {% for note in table.notes %}
+                    <li><a target="_blank" href="{{table.prefix}}{{note.url}}">{{note.name}}</a></li>
+                    {% endfor %}
+                  </ul>
+              </section>
+              {% endfor %}
           </section>
           {% endfor %}
-      </section>
+        </section>
+        
       {% endfor %}
+      
     </main>
 
   </body>

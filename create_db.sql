@@ -11,7 +11,8 @@ create table courses
   id   varchar(10)    not null
     primary key,
   url  varchar(10000) null,
-  name varchar(100)   null
+  name varchar(100)   null,
+  year varchar(100)   null
 );
 
 create table info
@@ -35,5 +36,7 @@ create table tables
   lbase  varchar(10000) null,
   lname  varchar(10000) null,
   lurl   varchar(10000) null,
-  prefix varchar(10000) null
+  prefix varchar(10000) null,
+  year   int            null
 );
+

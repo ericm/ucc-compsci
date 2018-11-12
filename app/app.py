@@ -61,6 +61,11 @@ class Course:
         self.name = name
         self.tables = tables
 
+class Year:
+    def __init__(self, year, courses):
+        self.year = year
+        self.courses = courses
+
 @cache.cached(timeout=100, key_prefix="queries")
 def queries():
     connection = pymysql.connect(host='mysql.netsoc.co',
@@ -71,19 +76,31 @@ def queries():
                              cursorclass=pymysql.cursors.DictCursor)
     try:
         with connection.cursor() as cursor:
-            sql = "SELECT * FROM `courses`"
+            sql = "SELECT * FROM `courses` ORDER BY year"
             cursor.execute(sql)
             coursesQ = cursor.fetchall()
             courses = []
+            years = []
             for i, course in enumerate(coursesQ):
-                courses.append(Course(course["id"], course["url"], course["name"], []))
                 
-                cursor.execute("SELECT name, id, url, prefix FROM `tables` WHERE id = %s", (courses[i].id))
+                if i == 0:
+                    
+                    years.append(Year(course["year"], [Course(course["id"], course["url"], course["name"], [])]))
+                
+                elif course["year"] == years[len(years)-1].year:
+
+                    years[len(years)-1].courses.append(Course(course["id"], course["url"], course["name"], []))
+
+                else:
+
+                    years.append(Year(course["year"], [Course(course["id"], course["url"], course["name"], [])]))
+                
+                cursor.execute("SELECT name, id, url, prefix FROM `tables` WHERE id = %s", (course["id"]))
 
                 tables = cursor.fetchall()
 
                 for it, t in enumerate(tables):
-                    courses[i].tables.append(Table(t["name"], t["id"], t["url"], t["prefix"], []))
+                    years[len(years)-1].courses[len(years[len(years)-1].courses)-1].tables.append(Table(t["name"], t["id"], t["url"], t["prefix"], []))
 
                     cursor.execute("SELECT name, url FROM `notes` WHERE `id` = %s AND `table` = %s", (t["id"], t["name"]))
 
@@ -93,13 +110,13 @@ def queries():
 
                     addits = cursor.fetchall()
                     for adds in addits:
-                        courses[i].tables[it].notes.append(Note(adds["name"], adds["url"]))
+                        years[len(years)-1].courses[len(years[len(years)-1].courses)-1].tables[it].notes.append(Note(adds["name"], adds["url"]))
 
                     for n in notes:
-                        courses[i].tables[it].notes.append(Note(n["name"], n["url"]))
+                        years[len(years)-1].courses[len(years[len(years)-1].courses)-1].tables[it].notes.append(Note(n["name"], n["url"]))
 
                     
-            return courses
+            return years
 
 
     finally:
@@ -119,9 +136,9 @@ th.start()
 @app.route('/')
 @cache.cached(30)
 def index():
-    courses = queries()
+    years = queries()
     difference = last()
 
-    name = "CK401 2022 NOTES INDEX"
+    name = "CK401 NOTES INDEX"
 
-    return render_template("index.html", name=name, courses=courses, dif=difference)
+    return render_template("index.html", name=name, years=years, dif=difference)

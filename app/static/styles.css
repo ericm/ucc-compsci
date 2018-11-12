@@ -27,6 +27,18 @@ main {
     color: #211374;
     border-radius: 1em;
 }
+.year {
+    padding: 0.01em 1.5em;
+    margin: 1em 0;
+    border-radius: .6em;
+    background: rgba(160, 160, 160, 0.048);
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.123);
+}
+.year>h2 {
+    color: #3f3f3f;
+    padding-bottom: .5em;
+    border-bottom: solid #302d4434 .2em;
+}
 .course {
     padding: 0.01em 1.5em;
     margin: 1em 0;
