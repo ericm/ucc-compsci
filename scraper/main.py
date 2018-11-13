@@ -1,10 +1,18 @@
 import pymysql.cursors
-from env import env
+# from env import env
 from parsel import Selector
 import requests
-import sys
+import sys, os
 import time
 from datetime import datetime
+
+class Env:
+    def __init__(self):
+        self.username = os.environ['L_USERNAME']
+        self.password = os.environ['L_PASSWORD']
+        self.db = os.environ['L_DB']
+
+env = Env()
 
 class Note:
     def __init__(self, name, url):

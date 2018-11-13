@@ -1,9 +1,17 @@
 from flask import Flask, render_template
 import pymysql.cursors
-from env import env
+# from env import env
 from flask_caching import Cache
-import threading, time
+import threading, time, os
 from datetime import datetime
+
+class Env:
+    def __init__(self):
+        self.username = os.environ['L_USERNAME']
+        self.password = os.environ['L_PASSWORD']
+        self.db = os.environ['L_DB']
+
+env = Env()
 
 app = Flask(__name__)
 cache = Cache(app,config={'CACHE_TYPE': 'simple'})
@@ -134,7 +142,7 @@ th = threading.Thread(target=recache, args=(), kwargs={})
 th.start()
 
 @app.route('/')
-@cache.cached(30)
+# @cache.cached(30)
 def index():
     years = queries()
     difference = last()
