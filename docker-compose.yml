@@ -4,7 +4,8 @@ services:
     web:
         build: ./app
         ports:
-         - "8000:8000"
+         - "8000:80"
+        image: "fallenverse/lecture-scraper_web:latest"
     back:
         build: ./scraper
-        
+        image: "fallenverse/lecture-scraper_back:latest"
