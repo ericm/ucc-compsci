@@ -1,1 +1,1 @@
-*/15 * * * * python /scraper/main.py
+*/2 * * * * root python /scraper/main.py >> /var/log/cron.log 2>&1
