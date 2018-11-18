@@ -1,2 +1,2 @@
 SHELL=/bin/bash
-*/2 * * * * root /scraper/run.sh >> /var/log/cron.log 2>&1
+*/15 * * * * root /scraper/run.sh >> /var/log/cron.log 2>&1
