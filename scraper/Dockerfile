@@ -10,6 +10,8 @@ RUN chmod 0644 /etc/cron.d/hello-cron
 
 RUN touch /var/log/cron.log
 
+RUN touch /var/env_vars
+
 WORKDIR /scraper
 
 COPY requirements.txt /scraper/requirements.txt
@@ -18,6 +20,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /scraper
 
-CMD pip install --no-cache-dir -r /scraper/requirements.txt
+RUN chmod 777 /scraper/entry.sh
 
-CMD cron && tail -f /var/log/cron.log
+RUN chmod 777 /scraper/run.sh
+
+ENTRYPOINT ["/scraper/entry.sh"]

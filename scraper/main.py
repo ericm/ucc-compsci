@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import pymysql.cursors
 # from env import env
 from parsel import Selector
