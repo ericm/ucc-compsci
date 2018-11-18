@@ -5,6 +5,15 @@ body {
     font-size: 15px;
     margin: 0;
 }
+small {
+    font-size: 1em;
+    font-weight: bold;
+    color: #3f3f3f;   
+}
+small a, small a:visited {
+    color: #505050;
+    font-weight: bold;
+}
 header {
     background: rgba(55, 7, 167, 0.925);
     font-family: 'Barlow Condensed';
@@ -17,13 +26,14 @@ header {
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.568);
     font-size: 1.1em;
     padding: .6em 15%;
+    z-index: 1000;
 }
 main {
     margin: 7em auto;
     width: 70%;
     font-size: 1.3em;
     background: rgba(216, 180, 240, 0.226);
-    padding: .5em 2em;
+    padding: .5em 2em 1em;
     color: #211374;
     border-radius: 1em;
 }
@@ -139,5 +149,8 @@ a {
     }
     header {
         padding: .1em 10%;
+    }
+    ul {
+        padding: 0;
     }
 }
