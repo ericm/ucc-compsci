@@ -6,7 +6,7 @@
 
 ## Development install
 
-- Add env vars `L_USERNAME`, `L_PASSWORD` and `L_DB`.
+- Add env vars `L_DROPBOX`, `L_USERNAME`, `L_PASSWORD` and `L_DB`.
 
 - Run `pip install -r requirements.txt` in both `app` and `scraper`
 
