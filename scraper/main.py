@@ -7,6 +7,7 @@ import requests
 import sys, os
 import time
 from datetime import datetime
+import dl
 
 class Env:
     def __init__(self):
@@ -100,6 +101,7 @@ def job():
                
     finally:
         connection.close()
+        dl.download()
 
 
 job()
