@@ -1,4 +1,4 @@
-# Lecture Scraper
+# UCC Computer Science Hub
 
 - *Originally designed for CK401*
 
