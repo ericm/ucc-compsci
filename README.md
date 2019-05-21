@@ -4,17 +4,18 @@
 
 - Runs on Python / Flask
 
-## Development install
+## Development
 
 - Add env vars `L_DROPBOX`, `L_USERNAME`, `L_PASSWORD` and `L_DB`.
+    - You can do this by putting them in a `.env` file.
 
-- Run `pip install -r requirements.txt` in both `app` and `scraper`
+- Run `docker-compose up web` to start the app
 
-- To run, `python main.py` for scraper (in dir) and `flask start` for frontend (in dir).
+- Run `docker-compose up back` to start the scraper
 
 ## Production
 
- ### Dependencies
+### Dependencies
  - Docker
  - Docker compose
 
