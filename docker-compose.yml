@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    build: ./app
+    ports:
+     - "8000:8000"
+    image: "compsci-hub-app"
+    environment:
+     - L_USERNAME=${L_USERNAME}
+     - L_PASSWORD=${L_PASSWORD}
+     - L_DB=${L_DB}
+
+  scraper:
+    build: ./scraper
+    image: "compsci-hub-scraper"
+    environment:
+     - L_USERNAME=${L_USERNAME}
+     - L_PASSWORD=${L_PASSWORD}
+     - L_DB=${L_DB}
+     - L_DROPBOX=${L_DROPBOX}
