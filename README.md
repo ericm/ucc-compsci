@@ -1,4 +1,6 @@
-# UCC Computer Science Hub
+# CK401.com
+### _UCC Computer Science Hub_
+
 
 - *Originally designed for CK401*
 
