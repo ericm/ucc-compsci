@@ -5,7 +5,7 @@ services:
     build: ./app
     ports:
      - "8000:8000"
-    image: "fallenverse/lecture-scraper_web:latest"
+    image: "ck401-app"
     environment:
      - L_USERNAME=${L_USERNAME}
      - L_PASSWORD=${L_PASSWORD}
@@ -13,7 +13,7 @@ services:
 
   scraper:
     build: ./scraper
-    image: "fallenverse/lecture-scraper_back:latest"
+    image: "ck401-scraper"
     environment:
      - L_USERNAME=${L_USERNAME}
      - L_PASSWORD=${L_PASSWORD}

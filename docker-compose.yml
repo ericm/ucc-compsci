@@ -5,7 +5,7 @@ services:
     build: ./app
     ports:
      - "8000:8000"
-    image: "compsci-hub-app"
+    image: "ck401-dev-app"
     environment:
      - L_USERNAME=${L_USERNAME}
      - L_PASSWORD=${L_PASSWORD}
@@ -13,7 +13,7 @@ services:
 
   scraper:
     build: ./scraper
-    image: "compsci-hub-scraper"
+    image: "ck401-dev-scraper"
     environment:
      - L_USERNAME=${L_USERNAME}
      - L_PASSWORD=${L_PASSWORD}
