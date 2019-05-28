@@ -1,8 +1,8 @@
-import { auth as Auth } from "firebase";
+import { User } from "firebase";
 
 export interface AccountModel {
     loggedIn: boolean,
-    credentials?: Auth.UserCredential
+    credentials?: User
 }
 
 export namespace AccountModel {
