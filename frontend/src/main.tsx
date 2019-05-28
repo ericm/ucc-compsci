@@ -7,11 +7,12 @@ import { Router } from 'react-router';
 import { App } from './app';
 import { Header } from 'app/components';
 import { rootReducer } from 'app/reducers';
+import { firebaseConfig } from 'environment/firebase';
 import firebase from '@firebase/app';
 import '@firebase/auth';
 import '@firebase/firestore';
 
-firebase.initializeApp({});
+firebase.initializeApp(firebaseConfig);
 
 // prepare store
 const history = createBrowserHistory();
