@@ -15,7 +15,14 @@ export class Header extends React.Component<Header.Props, Header.State> {
     constructor(props: Header.Props) {
         super(props);
         this.state = {};
-        console.log(this.props.firebase.loggedIn());
+        this.login.bind(this)();
+    }
+
+    private async login() {
+        await this.props.firebase.login("test@test.com", "test123");
+        if (this.props.firebase.loggedIn()) {
+            console.log(this.props.firebase.getUser());
+        }
     }
 
     public render() {
