@@ -1,15 +1,24 @@
 version: '3'
 
+# Development docker-compose configuration
+# Use docker-compose.production.yml for production
+
 services:
-  app:
-    build: ./app
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
-     - "8000:8000"
-    image: "ck401-dev-app"
+     - "3000:3000"
+    image: "ck401-dev-frontend"
     environment:
-     - L_USERNAME=${L_USERNAME}
-     - L_PASSWORD=${L_PASSWORD}
-     - L_DB=${L_DB}
+     - API_KEY=${FIREBASE_API_KEY}
+     - PROJECT_ID=${FIREBASE_PROJECT_ID}
+    volumes:
+      - ./frontend:/frontend
+      - /frontend/node_modules
+      - /frontend/src/environment
+    command: npm start
 
   scraper:
     build: ./scraper
