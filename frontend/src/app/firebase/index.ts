@@ -6,7 +6,6 @@ import { FirebaseAuth, User } from '@firebase/auth-types';
 
 export default class Firebase {
     public firebase: FirebaseApp
-    private user: User | null = null
 
     constructor() {
         this.firebase = firebase.initializeApp(firebaseConfig);
@@ -21,19 +20,17 @@ export default class Firebase {
     }
 
     public login = (email: string, password: string) =>
-        this.getAuth().signInWithEmailAndPassword(email, password).then(user => {
-            if (!!user.user) {
-                this.user = user.user;
-            }
+        this.getAuth().signInWithEmailAndPassword(email, password).then(_ => {
+            return
         })
 
     public loggedIn = () => {
-        return this.user !== null;
+        return this.getAuth().currentUser !== null;
     }
 
     public getUser = () => {
-        if (this.user !== null) {
-            return this.user;
+        if (this.getAuth().currentUser !== null) {
+            return this.getAuth().currentUser
         } else {
             return {} as User;
         }
