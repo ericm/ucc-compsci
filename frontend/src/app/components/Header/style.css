@@ -4,3 +4,39 @@
     width: 100%;
     height: 60px;
 }
+.root h1 {
+    position: fixed;
+    z-index: 100;
+    color: #fff;
+    left: 40px;
+    top: 7px;
+    font-size: 3em;
+}
+.root nav {
+    position: fixed;
+    right: 80px;
+    color: #5581f6;
+    top: 15px;
+}
+.root ul {
+    list-style: none;
+}
+.root li {
+    font-size: 1.5em;
+}
+.back {
+    position: relative;
+    width: 300px;
+    height: 67px;;
+}
+.border {
+    height: 7px;
+    width: calc(100% - 300px);
+    position: relative;
+    left: -8px;
+}
+
+a, a:visited {
+    color: #5581f6;
+    text-decoration: none;
+}

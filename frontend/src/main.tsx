@@ -5,6 +5,7 @@ import * as ReactDOM from 'react-dom';
 import { Router } from 'react-router';
 import { App } from './app';
 import Firebase from 'app/firebase'
+import './styles.global.css'
 
 // prepare history
 const history = createBrowserHistory();

@@ -144,7 +144,8 @@ module.exports = {
             disableDotRule: true
         },
         stats: 'minimal',
-        clientLogLevel: 'warning'
+        clientLogLevel: 'warning',
+        host: '0.0.0.0'
     },
     // https://webpack.js.org/configuration/devtool/
     devtool: isProduction ? 'hidden-source-map' : 'cheap-module-eval-source-map',
