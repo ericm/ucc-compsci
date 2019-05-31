@@ -59,6 +59,7 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "@types/react-router-dom": "^4.3.3",
     "classnames": "^2.2.6",
     "firebase": "^6.0.4",
     "react": "^16.8.1",
@@ -66,6 +67,7 @@
     "react-redux": "^6.0.0",
     "react-redux-firebase": "^3.0.0-alpha.12",
     "react-router": "^4.3.1",
+    "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.4"
   }

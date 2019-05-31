@@ -16,13 +16,15 @@
     position: fixed;
     right: 80px;
     color: #5581f6;
-    top: 15px;
+    top: 17px;
 }
 .root ul {
     list-style: none;
 }
 .root li {
     font-size: 1.5em;
+    display: inline-block;
+    padding: 0 1em 0 1em;
 }
 .back {
     position: relative;

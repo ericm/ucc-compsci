@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Firebase from 'app/firebase'
 import * as style from './style.css';
+import { Link } from 'react-router-dom';
 
 export namespace Header {
     export interface Props {
@@ -31,7 +32,8 @@ export class Header extends React.Component<Header.Props, Header.State> {
                 <h1>CK401</h1>
                 <nav>
                     <ul>
-                        <a href="/"><li>Home</li></a>
+                        <Link to={"/"}><li>Home</li></Link>
+                        <Link to={"/notes"}><li>Notes</li></Link>
                     </ul>
                 </nav>
                 <svg className={style.back} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
