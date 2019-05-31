@@ -12,19 +12,10 @@ services:
      - "3000:3000"
     image: "ck401-dev-frontend"
     environment:
-     - API_KEY=${FIREBASE_API_KEY}
-     - PROJECT_ID=${FIREBASE_PROJECT_ID}
+     - API_KEY=${API_KEY}
+     - PROJECT_ID=${PROJECT_ID}
     volumes:
       - ./frontend:/frontend
       - /frontend/node_modules
       - /frontend/src/environment
-    command: npm start
-
-  scraper:
-    build: ./scraper
-    image: "ck401-dev-scraper"
-    environment:
-     - L_USERNAME=${L_USERNAME}
-     - L_PASSWORD=${L_PASSWORD}
-     - L_DB=${L_DB}
-     - L_DROPBOX=${L_DROPBOX}
+    command: bash -c "npm run config && npm start"

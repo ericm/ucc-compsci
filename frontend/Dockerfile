@@ -1,4 +1,4 @@
-FROM node:11-alpine
+FROM node:11-stretch-slim
 
 WORKDIR /frontend
 
@@ -9,6 +9,4 @@ COPY package-lock.json .
 RUN npm i --quiet
 
 COPY . .
-
-RUN npm run config
 

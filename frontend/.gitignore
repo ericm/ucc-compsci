@@ -9,3 +9,4 @@ build
 dist
 src/environment/*
 !src/environment/template
+.devcontainer
