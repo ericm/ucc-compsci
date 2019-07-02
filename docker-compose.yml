@@ -16,6 +16,5 @@ services:
      - PROJECT_ID=${PROJECT_ID}
     volumes:
       - ./frontend:/frontend
-      - /frontend/node_modules
       - /frontend/src/environment
     command: bash -c "npm run config && npm start"
