@@ -16,16 +16,16 @@ export class Home extends React.Component<Home.Props> {
     render() {
         return (
             <div className={style.normal}>
-                <Slider dots={true} infinite={true} speed={500} slidesToShow={1} slidesToScroll={1}>
-                <div>
-                    <h3>1</h3>
-                </div>
-                <div>
-                    <h3>2</h3>
-                </div>
-                <div>
-                    <h3>3</h3>
-                </div>
+                <Slider className={style.slider} dots={true} infinite={true} speed={500} slidesToShow={1} slidesToScroll={1}>
+                    <div>
+                        <h3>1</h3>
+                    </div>
+                    <div>
+                        <h3>2</h3>
+                    </div>
+                    <div>
+                        <h3>3</h3>
+                    </div>
                 </Slider>
             </div>
         );

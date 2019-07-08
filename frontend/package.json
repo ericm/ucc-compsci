@@ -19,6 +19,11 @@
     "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "config": "node config/env.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --pattern \"src/**/*.{ts,tsx,css}\""
+    }
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -40,6 +45,7 @@
     "gh-pages": "^2.0.1",
     "html-loader": "^1.0.0-alpha.0",
     "html-webpack-plugin": "^4.0.0-alpha",
+    "husky": "^3.0.0",
     "mini-css-extract-plugin": "^0.5.0",
     "postcss": "^7.0.13",
     "postcss-browser-reporter": "^0.5.0",
@@ -49,6 +55,7 @@
     "postcss-reporter": "^6.0.1",
     "postcss-url": "^8.0.0",
     "prettier": "^1.15.3",
+    "pretty-quick": "^1.11.1",
     "react-hot-loader": "^4.6.3",
     "redux-devtools-extension": "^2.13.7",
     "style-loader": "^0.23.1",
