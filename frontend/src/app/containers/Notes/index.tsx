@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as style from './style.css';
+const style = require('./style.css');
 
 export namespace Notes {
     export interface Props {

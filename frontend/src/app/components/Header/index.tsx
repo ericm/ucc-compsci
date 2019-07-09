@@ -1,7 +1,9 @@
 import * as React from 'react';
 import Firebase from 'app/firebase'
-import * as style from './style.css';
+
 import { Link } from 'react-router-dom';
+
+const style = require('./style.css');
 
 export namespace Header {
     export interface Props {
