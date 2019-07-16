@@ -1,5 +1,5 @@
-import * as React from 'react';
-const style = require('./style.css');
+import * as React from 'react'
+const style = require('./style.css')
 
 interface Props {}
 export default (props: Props) => {
@@ -7,5 +7,5 @@ export default (props: Props) => {
     <div className={style.normal}>
       <h1>Notes</h1>
     </div>
-  );
-};
+  )
+}

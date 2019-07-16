@@ -1,6 +1,6 @@
-import * as React from 'react';
-const style = require('./style.css');
-import Slider from 'react-slick';
+import * as React from 'react'
+const style = require('./style.css')
+import Slider from 'react-slick'
 
 interface Props {}
 
@@ -28,5 +28,5 @@ export default (props: Props) => {
         </div>
       </Slider>
     </div>
-  );
-};
+  )
+}

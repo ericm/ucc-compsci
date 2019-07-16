@@ -1,25 +1,24 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import Firebase from 'app/firebase';
-const style = require('./style.css');
+import * as React from 'react'
+import { Link } from 'react-router-dom'
+import Firebase from 'app/firebase'
+const style = require('./style.css')
 
 interface Props {
-  firebase: Firebase;
-  setFirebase: React.Dispatch<React.SetStateAction<Firebase>>;
+  firebase: Firebase
+  setFirebase: React.Dispatch<React.SetStateAction<Firebase>>
 }
 export default (props: Props) => {
   async function login() {
-    let firebase = props.firebase;
-    await firebase.login('test@test.com', 'test123');
+    let firebase = props.firebase
+    await firebase.login('test@test.com', 'test123')
     props.setFirebase(firebase)
-    
   }
-  login();
+  login()
 
   React.useEffect(() => {
-    console.log(props.firebase.loggedIn());
+    console.log(props.firebase.loggedIn())
   })
-  
+
   return (
     <header className={style.root}>
       <h1>CK401</h1>
@@ -50,5 +49,5 @@ export default (props: Props) => {
         <polygon style={{ fill: '#5581f6' }} points="100 0 0 10 0 0" />
       </svg>
     </header>
-  );
-};
+  )
+}

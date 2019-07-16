@@ -1,13 +1,13 @@
-import * as React from 'react';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
-import { Home, Notes } from 'app/containers';
-import { Header } from 'app/components';
-import { hot } from 'react-hot-loader';
-import Firebase from 'app/firebase';
+import * as React from 'react'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { Home, Notes } from 'app/containers'
+import { Header } from 'app/components'
+import { hot } from 'react-hot-loader'
+import Firebase from 'app/firebase'
 
 export const App = hot(module)(() => {
   // Firebase hook
-  const [firebase, setFirebase] = React.useState(new Firebase());
+  const [firebase, setFirebase] = React.useState(new Firebase())
 
   return (
     <Router>
@@ -17,5 +17,5 @@ export const App = hot(module)(() => {
         <Route path="/notes" component={Notes} />
       </div>
     </Router>
-  );
-});
+  )
+})
