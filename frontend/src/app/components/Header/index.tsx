@@ -1,50 +1,46 @@
 import * as React from 'react';
-import Firebase from 'app/firebase'
-
 import { Link } from 'react-router-dom';
-
+import Firebase from 'app/firebase';
 const style = require('./style.css');
 
-export namespace Header {
-    export interface Props {
-        firebase: Firebase
-    }
-    export interface State {
-
-    }
+interface Props {
+  firebase: Firebase;
+  setFirebase: React.Dispatch<React.SetStateAction<Firebase>>;
 }
 
-export class Header extends React.Component<Header.Props, Header.State> {
-    constructor(props: Header.Props) {
-        super(props);
-        this.state = {};
-        this.login.bind(this)();
-    }
+export default (props: Props) => {
+  props.firebase.login('test@test.com', 'test123');
+  console.log(props.firebase.loggedIn());
 
-    private async login() {
-        await this.props.firebase.login("test@test.com", "test123");
-        if (this.props.firebase.loggedIn()) {
-            console.log(this.props.firebase.getUser());
-        }
-    }
-
-    public render() {
-        return (
-            <header className={style.root}>
-                <h1>CK401</h1>
-                <nav>
-                    <ul>
-                        <Link to={"/"}><li>Home</li></Link>
-                        <Link to={"/notes"}><li>Notes</li></Link>
-                    </ul>
-                </nav>
-                <svg className={style.back} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <polygon style={{fill:'#5581f6'}} points="0 0 0 10 100 10 75 0" />
-                </svg>
-                <svg className={style.border} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
-                    <polygon style={{fill:'#5581f6'}} points="100 0 0 10 0 0" />
-                </svg>
-            </header>
-        )
-    }
-}
+  return (
+    <header className={style.root}>
+      <h1>CK401</h1>
+      <nav>
+        <ul>
+          <Link to={'/'}>
+            <li>Home</li>
+          </Link>
+          <Link to={'/notes'}>
+            <li>Notes</li>
+          </Link>
+        </ul>
+      </nav>
+      <svg
+        className={style.back}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 10"
+        preserveAspectRatio="none"
+      >
+        <polygon style={{ fill: '#5581f6' }} points="0 0 0 10 100 10 75 0" />
+      </svg>
+      <svg
+        className={style.border}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 10"
+        preserveAspectRatio="none"
+      >
+        <polygon style={{ fill: '#5581f6' }} points="100 0 0 10 0 0" />
+      </svg>
+    </header>
+  );
+};
