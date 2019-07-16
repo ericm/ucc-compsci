@@ -7,11 +7,19 @@ interface Props {
   firebase: Firebase;
   setFirebase: React.Dispatch<React.SetStateAction<Firebase>>;
 }
-
 export default (props: Props) => {
-  props.firebase.login('test@test.com', 'test123');
-  console.log(props.firebase.loggedIn());
+  async function login() {
+    let firebase = props.firebase;
+    await firebase.login('test@test.com', 'test123');
+    props.setFirebase(firebase)
+    
+  }
+  login();
 
+  React.useEffect(() => {
+    console.log(props.firebase.loggedIn());
+  })
+  
   return (
     <header className={style.root}>
       <h1>CK401</h1>
