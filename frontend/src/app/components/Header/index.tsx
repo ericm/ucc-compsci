@@ -1,23 +1,11 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import Firebase from 'app/firebase'
 const style = require('./style.css')
 
 interface Props {
-  firebase: Firebase
-  setFirebase: React.Dispatch<React.SetStateAction<Firebase>>
+
 }
 export default (props: Props) => {
-  async function login() {
-    let firebase = props.firebase
-    await firebase.login('test@test.com', 'test123')
-    props.setFirebase(firebase)
-  }
-  login()
-
-  React.useEffect(() => {
-    console.log(props.firebase.loggedIn())
-  })
 
   return (
     <header className={style.root}>

@@ -11,9 +11,10 @@ export default (props: Props) => {
         className={style.slider}
         dots={true}
         infinite={true}
-        speed={500}
+        speed={1000}
         arrows={false}
         autoplay={true}
+        autoplaySpeed={10000}
         slidesToShow={1}
         slidesToScroll={1}
       >
