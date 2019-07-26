@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="95.144463mm"
+   height="164.4304mm"
+   viewBox="0 0 95.144463 164.4304"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   sodipodi:docname="drawing.svg">
+  <defs
+     id="defs2">
+    <meshgradient
+       inkscape:collect="always"
+       id="meshgradient6250"
+       gradientUnits="userSpaceOnUse"
+       x="48.486492"
+       y="58.108288">
+      <meshrow
+         id="meshrow6252">
+        <meshpatch
+           id="meshpatch6254">
+          <stop
+             path="c 28.5087,0  57.0175,0  85.5262,0"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop6256" />
+          <stop
+             path="c 0,31.3596  0,62.7193  0,94.0789"
+             style="stop-color:#1e90ff;stop-opacity:1"
+             id="stop6258" />
+          <stop
+             path="c -28.5087,0  -57.0175,0  -85.5262,0"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop6260" />
+          <stop
+             path="c 0,-31.3596  0,-62.7193  0,-94.0789"
+             style="stop-color:#1e90ff;stop-opacity:1"
+             id="stop6262" />
+        </meshpatch>
+      </meshrow>
+    </meshgradient>
+    <meshgradient
+       y="99.885414"
+       x="56.318451"
+       gradientUnits="userSpaceOnUse"
+       id="meshgradient6276"
+       inkscape:collect="always">
+      <meshrow
+         id="meshrow6278">
+        <meshpatch
+           id="meshpatch6280">
+          <stop
+             path="c 29.1041,0  58.2084,0  87.3125,0"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop6282" />
+          <stop
+             path="c 0,40.8844  0,81.7689  0,122.653"
+             style="stop-color:#1e90ff;stop-opacity:1"
+             id="stop6284" />
+          <stop
+             path="c -29.1041,0  -58.2084,0  -87.3125,0"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop6286" />
+          <stop
+             path="c 0,-40.8844  0,-81.7689  -1.42109e-14,-122.653"
+             style="stop-color:#1e90ff;stop-opacity:1"
+             id="stop6288" />
+        </meshpatch>
+      </meshrow>
+    </meshgradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="306.40827"
+     inkscape:cy="300.6034"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-text-baseline="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1912"
+     inkscape:window-height="1051"
+     inkscape:window-x="4"
+     inkscape:window-y="4"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-48.486491,-58.108289)">
+    <path
+       style="fill:url(#meshgradient6250);fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 48.486491,58.108289 110.49302,152.18717 134.01274,133.4783 Z"
+       id="path10"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:url(#meshgradient6276);fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 133.63476,133.43105 -23.51972,18.70887 -53.796589,46.58627 6.047621,20.03274 23.812499,3.77976 57.452379,-77.10714 -3.40179,-27.78125 -44.412196,-17.764886 37.817796,33.545636"
+       id="path12"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

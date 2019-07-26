@@ -1,7 +1,7 @@
 .slider {
   background: linear-gradient(
     170deg,
-    #000000 0%,
+    #000000dc 0%,
     rgb(15, 15, 15) 100%
   ),
   url('/assets/campus.jpg');
@@ -9,32 +9,38 @@
   font-size: 4em;
   text-align: center;
   padding: 3em 0 3em 0;
+  height: 450px;
 }
 .slider h3 {
   background: linear-gradient(
     85deg,
-    #295ce9 16%,
-    rgb(3, 53, 190) 90%
+    #2e62f3 16%,
+    rgb(60, 112, 255) 90%
   );
-  text-shadow: #4e00ff61 10px;
   background-attachment: fixed;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   overflow: hidden;
-  animation: textsh 60s infinite;
-  filter: saturate(10000);
+  animation: textsh 6s infinite;
+  z-index: 10;
 }
+.slider img {
+  height: 550px;
+  position: absolute;
+  top: -100px;
+  z-index: -1;
+  display: inline;
+}
+.slider>div {
+  overflow: visible !important;
 
+}
 @keyframes textsh {
   0% {  opacity: 1; }
-  20% {  opacity: 0.8; }
-  21% {  opacity: 0.7; }
+  20% {  opacity: 0.9; }
   40% { opacity: 1; }
-  41% {  opacity: 0.8;}
-  60% {  opacity: 0.8; }
-  61% { opacity: 1; }
-  80% {  opacity: 0.8; }
-  81% { opacity: 0.8;}
+  60% {  opacity: 0.9; }
+  80% {  opacity: 0.9\; }
   100% {  opacity: 1;}
 }

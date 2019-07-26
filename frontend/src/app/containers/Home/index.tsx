@@ -19,7 +19,8 @@ export default (props: Props) => {
         slidesToScroll={1}
       >
         <div>
-          <h3>CK401: UCC Computer Science</h3>
+          <h3><b>CK401</b>: UCC Computer Science</h3>
+          <img src="/assets/drawing.svg.png" />
         </div>
         <div>
           <h3>2</h3>
