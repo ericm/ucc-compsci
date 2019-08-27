@@ -1,22 +1,16 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
-    "target": "es5",
-    "jsx": "react",
-    "module": "es6",
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "declaration": false,
-    "removeComments": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "strict": true,
-    "outDir": "build",
-    "lib": ["es6", "es7", "dom"],
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-      "app/*": ["./app/*"]
-    }
+      "~*": ["./*"]
+    },
+    "jsx": "react",
+    "typeRoots": ["node_modules/@types"],
+    "target": "es5",
+    "module": "esnext",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "lib": ["es2017", "dom"]
   },
-  "exclude": ["build", "node_modules"]
+  "include": ["src/**/*"]
 }
