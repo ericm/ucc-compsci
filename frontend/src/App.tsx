@@ -9,21 +9,11 @@ const Home = () => (
     Home Page
   </div>
 )
-const ContactUs = React.lazy(() => import('./components/ContactUs/ContactUs'))
-
-const withSuspense = Component => {
-  return props => (
-    <React.Suspense fallback={<div>Loading...</div>}>
-      <Component {...props} />
-    </React.Suspense>
-  )
-}
 
 export default () => {
   return (
     <Router>
       <Route path="/" component={Home} />
-      <Route path="/contact-us" component={withSuspense(ContactUs)} />
     </Router>
   )
 }
