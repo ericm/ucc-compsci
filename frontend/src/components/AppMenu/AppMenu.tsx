@@ -1,8 +1,10 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, RouteProps } from 'react-router-dom'
 import * as css from './AppMenu.css'
 
-interface Props {}
+interface Props {
+  route: RouteProps
+}
 export default (props: Props) => {
   return (
     <header className={css.main}>
