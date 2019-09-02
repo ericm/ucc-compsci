@@ -4,7 +4,11 @@ import Globules from 'react-globules'
 
 import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
 
-const Home = () => <div></div>
+const Home = () => (
+  <div>
+    <Globules />
+  </div>
+)
 
 const Menu = withRouter(AppMenu)
 
