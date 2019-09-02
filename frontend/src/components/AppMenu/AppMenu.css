@@ -26,6 +26,10 @@
   font-size: 1.5em;
   display: inline-block;
   padding: 0 1em 0 1em;
+  transition: all 0.3s;
+}
+.main li:hover {
+  text-shadow: #4f4f4f54 0 0 5px;
 }
 .back {
   position: relative;
@@ -37,6 +41,11 @@
   width: calc(100% - 300px);
   position: relative;
   left: -8px;
+}
+
+.set li {
+  color: #285ff5;
+  text-shadow: #4f4f4f54 0 0 5px;
 }
 
 a,
