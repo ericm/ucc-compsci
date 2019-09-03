@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
 
 const Home = () => (
   <div>
-    <Globules />
+    <Globules widthPercent={true} heightPercent={true} width={100} height={100} speed={4} density={50} />
   </div>
 )
 
