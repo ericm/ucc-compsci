@@ -6,7 +6,18 @@ import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
 
 const Home = () => (
   <div>
-    <Globules widthPercent={true} heightPercent={true} width={100} height={100} speed={4} density={50} />
+    <Globules
+      widthPercent={true}
+      heightPercent={true}
+      width={100}
+      height={100}
+      speed={4}
+      density={50}
+      color={'#1750d9'}
+      background={'#1754e8'}
+    >
+      <h1>CK401: UCC Computer Science</h1>
+    </Globules>
   </div>
 )
 
@@ -16,7 +27,7 @@ export default () => {
   return (
     <Router>
       <Menu />
-      <div style={{ paddingTop: 60 }}>
+      <div>
         <Route path="/" component={Home} />
       </div>
     </Router>
