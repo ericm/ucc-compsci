@@ -1,11 +1,12 @@
 import * as React from 'react'
 import AppMenu from './components/AppMenu/AppMenu'
 import Globules from 'react-globules'
-
+import * as styles from './App.css'
 import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
 
+
 const Home = () => (
-  <div>
+  <div className={styles.home}>
     <Globules
       widthPercent={true}
       heightPercent={true}
@@ -18,6 +19,7 @@ const Home = () => (
     >
       <h1>CK401: UCC Computer Science</h1>
     </Globules>
+
   </div>
 )
 
