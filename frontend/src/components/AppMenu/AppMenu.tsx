@@ -7,8 +7,6 @@ export default (props: RouteComponentProps) => {
 
   const [routes, setRoutes] = React.useState<string[]>([css.set, ''])
 
-  console.log(routes)
-
   React.useEffect(() => {
     let tRoutes: string[] = []
     for (let i in slugs) {

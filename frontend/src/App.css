@@ -1,3 +1,17 @@
 .home h1 {
     text-align: center;
+    padding-top: 50vh;
+    color: rgba(255, 251, 251, 0.9);
+    font-size: 4rem;
+    position: relative;
+    top: -1.1em;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+}
+
+.home h1>b {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.1em;
+    display: block;
+    text-decoration: underline;
 }
