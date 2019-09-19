@@ -13,7 +13,7 @@ const Home = () => (
       width={100}
       height={100}
       speed={4}
-      density={50}
+      density={40}
       color={'#1750d9'}
       background={'#1754e8'}
     >

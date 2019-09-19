@@ -17,6 +17,5 @@
     cursor: pointer;
 }
 .home h1>b:hover {
-    font-size: 1.2em;
-    color: #ffa88b;
+    font-size: 1.6em;
 }
