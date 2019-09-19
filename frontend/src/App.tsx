@@ -17,7 +17,7 @@ const Home = () => (
       color={'#1750d9'}
       background={'#1754e8'}
     >
-      <h1><b>CK401</b> UCC Computer Science</h1>
+      <h1><b><i className="fab fa-typo3"></i>CK401</b> UCC Computer Science</h1>
     </Globules>
 
   </div>

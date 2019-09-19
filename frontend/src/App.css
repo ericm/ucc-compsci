@@ -11,7 +11,12 @@
 
 .home h1>b {
     font-family: "Quicksand", sans-serif;
-    font-size: 1.1em;
+    font-size: 1.3em;
     display: block;
-    text-decoration: underline;
+    transition: all .3s;
+    cursor: pointer;
+}
+.home h1>b:hover {
+    font-size: 1.2em;
+    color: #ffa88b;
 }
