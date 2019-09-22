@@ -8,8 +8,10 @@
     "node": ">=8"
   },
   "dependencies": {
+    "@firebase/app": "^0.4.17",
     "@types/react-router-dom": "^4.3.5",
     "components": "^0.1.0",
+    "firebase": "^6.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.4.2",
     "react-globules": "^1.0.6",
