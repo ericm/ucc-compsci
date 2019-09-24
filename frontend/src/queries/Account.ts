@@ -2,8 +2,8 @@ import * as firebase from 'firebase/app'
 import 'firebase/auth'
 
 export default class Account {
-  app: firebase.app.App
-  user?: firebase.User
+  private app: firebase.app.App
+  private user: firebase.User | null = null
 
   constructor(app: firebase.app.App) {
     this.app = app
@@ -15,9 +15,17 @@ export default class Account {
        'login_hint': 'example@umail.ucc.ie'
      })
     )
-    let token = result.credential.toJSON()
-    let user = result.user
+    this.user = result.user
 
+  }
+
+  getUser(): firebase.User {
+    // Only call when checked login status
+    return this.user as firebase.User
+  }
+
+  loggedIn(): boolean {
+    return !!this.user
   }
 
 }
