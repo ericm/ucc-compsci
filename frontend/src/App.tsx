@@ -4,6 +4,9 @@ import Globules from 'react-globules'
 import * as styles from './App.css'
 import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom'
 
+import fireApp, { Account } from './queries'
+
+let account = new Account(fireApp)
 
 const Home = () => (
   <div className={styles.home}>
