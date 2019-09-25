@@ -26,7 +26,7 @@ const Home = () => (
   </div>
 )
 
-const Menu = withRouter(AppMenu)
+const Menu = withRouter(props => (<AppMenu {...props} account={account} />))
 
 export default () => {
   return (

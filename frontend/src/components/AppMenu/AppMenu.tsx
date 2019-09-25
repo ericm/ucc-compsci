@@ -1,8 +1,13 @@
 import * as React from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import * as css from './AppMenu.css'
+import  { Account } from '../../queries'
 
-export default (props: RouteComponentProps) => {
+
+interface Props extends RouteComponentProps{
+  account: Account
+}
+export default (props: Props) => {
   const slugs = ['/', '/notes']
 
   const [routes, setRoutes] = React.useState<string[]>([css.set, ''])
