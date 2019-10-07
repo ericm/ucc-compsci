@@ -17,7 +17,7 @@
   position: fixed;
   right: 80px;
   color: #b5c2f5;
-  top: 17px;
+  top: 16px;
 }
 .main ul {
   list-style: none;
@@ -46,6 +46,29 @@
 .set li {
   color: #285ff5;
   text-shadow: #4f4f4f54 0 0 5px;
+}
+
+.account,
+.login {
+  border-radius: 2rem;
+  padding: 0.5rem 1em;
+  margin-top: -2rem;
+  font-size: 1.2em;
+  border: 2px solid #000;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.login {
+  color: #f8f8f8;
+  border-color: #f8f8f8;
+}
+.login:hover {
+  background: rgba(24, 24, 24, 0.822);
+  border-radius: 1rem;
+  color: #285ff5;
+  border-color: #285ff5;
 }
 
 a,
