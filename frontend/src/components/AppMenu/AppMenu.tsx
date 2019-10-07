@@ -1,10 +1,9 @@
 import * as React from 'react'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import * as css from './AppMenu.css'
-import  { Account } from '../../queries'
+import { Account } from '../../queries'
 
-
-interface Props extends RouteComponentProps{
+interface Props extends RouteComponentProps {
   account: Account
 }
 export default (props: Props) => {
@@ -24,6 +23,20 @@ export default (props: Props) => {
     setRoutes(tRoutes)
   }, [props.location.pathname])
 
+  const [loggedIn, setLoggedIn] = React.useState(false)
+
+  let account = props.account
+
+  const logIn = (e: React.MouseEvent<HTMLButtonElement>) => {}
+
+  const logginButton = () => {
+    if (loggedIn) {
+      return <button className={css.account}>{account.getUser().displayName}</button>
+    } else {
+      return <button className={css.login}>Log In</button>
+    }
+  }
+
   return (
     <header className={css.main}>
       <h1>CK401</h1>
@@ -35,6 +48,7 @@ export default (props: Props) => {
           <Link to={slugs[1]} className={routes[1]}>
             <li>Notes</li>
           </Link>
+          {logginButton()}
         </ul>
       </nav>
       <svg className={css.back} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
