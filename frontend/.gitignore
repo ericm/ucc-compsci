@@ -53,3 +53,5 @@ jspm_packages
 .python-version
 .netlify
 .idea
+
+src/env/firebase.ts
