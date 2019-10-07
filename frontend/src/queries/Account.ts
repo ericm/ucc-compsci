@@ -10,13 +10,16 @@ export default class Account {
   }
 
   async signIn() {
-    let result = await this.app.auth().signInWithPopup(
-     new firebase.auth.GoogleAuthProvider().setCustomParameters({
-       'login_hint': 'example@umail.ucc.ie'
-     })
-    )
-    this.user = result.user
-
+    try {
+      let result = await this.app.auth().signInWithPopup(
+        new firebase.auth.GoogleAuthProvider().setCustomParameters({
+          login_hint: 'example@umail.ucc.ie'
+        })
+      )
+      this.user = result.user
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   getUser(): firebase.User {
@@ -27,6 +30,4 @@ export default class Account {
   loggedIn(): boolean {
     return !!this.user
   }
-
 }
-

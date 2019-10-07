@@ -27,13 +27,26 @@ export default (props: Props) => {
 
   let account = props.account
 
-  const logIn = (e: React.MouseEvent<HTMLButtonElement>) => {}
+  const logIn = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    try {
+      await account.signIn()
+      if (account.loggedIn) {
+        setLoggedIn(true)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   const logginButton = () => {
     if (loggedIn) {
       return <button className={css.account}>{account.getUser().displayName}</button>
     } else {
-      return <button className={css.login}>Log In</button>
+      return (
+        <button onClick={logIn} className={css.login}>
+          Log In
+        </button>
+      )
     }
   }
 
