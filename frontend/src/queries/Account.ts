@@ -22,6 +22,8 @@ export default class Account {
     }
   }
 
+  private handleUser(user: firebase.User) {}
+
   getUser(): firebase.User {
     // Only call when checked login status
     return this.user as firebase.User

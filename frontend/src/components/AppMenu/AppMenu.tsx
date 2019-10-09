@@ -30,7 +30,7 @@ export default (props: Props) => {
   const logIn = async (e: React.MouseEvent<HTMLButtonElement>) => {
     try {
       await account.signIn()
-      if (account.loggedIn) {
+      if (account.loggedIn()) {
         setLoggedIn(true)
       }
     } catch (error) {
